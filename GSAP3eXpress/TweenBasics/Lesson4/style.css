@@ -14,9 +14,8 @@ body {
 
 .circle {
   font-size: 18px;
-  width: 120px;
-  height: 120px;
-  padding: 24px 24px;
+  width: 220px;
+  height: 220px;
   background-color: rgb(139, 0, 0);
   border-radius: 100%;
   cursor: pointer;
@@ -25,6 +24,12 @@ body {
   align-items: center;
   justify-content: center;
   border: 3px solid black;
+}
+
+.circle-inside {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
 }
 
 .text {
@@ -36,12 +41,24 @@ body {
 
 .bg {
   position: absolute;
-  background: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  background: rgb(218, 218, 218);
   opacity: 0.3;
   will-change: transform;
 }
 
-/* .btn-container {
+.btn-container {
   display: flex;
   gap: 18px;
-} */
+}
+
+#pause {
+  background-color: rebeccapurple;
+}
+#reverse {
+  background-color: darkblue;
+}
+#restart {
+  background-color: orange;
+}
