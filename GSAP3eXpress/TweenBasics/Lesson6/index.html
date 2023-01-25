@@ -2,8 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Hey, Check out my minimalist portfolio site made with GSAP and JS"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png" />
+
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,64 +26,143 @@
       href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&family=Coda:wght@400;800&family=Poiret+One&display=swap"
       rel="stylesheet"
     />
-    <title>Portfolios</title>
+    <title>Ameen</title>
   </head>
-  <body>
-    <nav class="navbar">
-      <h3 class="logo">
-        Ameen.
-        <span></span>
-      </h3>
-      <ul class="navbar-lists">
-        <li class="navbar-list">
-          <a class="navbar-link" href="#">Home</a>
-        </li>
-        <li class="navbar-list">
-          <a class="navbar-link" href="#">Work</a>
-        </li>
-        <li class="navbar-list">
-          <a class="navbar-link" href="#">About</a>
-        </li>
-        <button class="nav-close-button">
-          <ion-icon name="close-outline"></ion-icon>
+  <body class="body">
+    <div class="wrapper">
+      <nav class="navbar">
+        <h3 class="logo">
+          Ameen.
+          <span></span>
+        </h3>
+        <ul class="navbar-lists">
+          <li class="navbar-list">
+            <a class="navbar-link" href="#">Home</a>
+            <div class="line"></div>
+          </li>
+          <li class="navbar-list">
+            <a class="navbar-link" href="#">Work</a>
+            <div class="line"></div>
+          </li>
+          <li class="navbar-list">
+            <a class="navbar-link" href="#">About</a>
+            <div class="line"></div>
+          </li>
+        </ul>
+        <ul class="mobile-navbar-lists">
+          <li class="mobile-navbar-list">
+            <div class="box"></div>
+            <a class="mobile-navbar-link" href="#">Home</a>
+          </li>
+          <li class="mobile-navbar-list">
+            <div class="box"></div>
+            <a class="mobile-navbar-link" href="#">Work</a>
+          </li>
+          <li class="mobile-navbar-list">
+            <div class="box"></div>
+            <a class="mobile-navbar-link" href="#">About</a>
+          </li>
+          <button class="mobile-nav-close-button">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </ul>
+        <button class="nav-button">
+          <ion-icon name="menu-outline"></ion-icon>
         </button>
-      </ul>
-      <button class="nav-button">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-    </nav>
+      </nav>
 
-    <main class="main">
-      <section class="hero-section-container container">
-        <div class="hero-section-center">
-          <div class="hero-text-container">
-            <h1 class="hero-title">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, hic!
-            </h1>
-            <p class="hero-para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusamus iusto
-              molestias animi incidunt ratione rerum commodi eum, consequuntur voluptates!
-            </p>
-          </div>
-          <div class="hero-image-container">
-            <div class="hero-box">
-              <div class="hero-inside-box">
-                <div class="hero-inside-inside-box">
-                  <div class="hero-inside-inside-inside-box"></div>
+      <main class="main">
+        <section class="hero-section-container container">
+          <div class="hero-section-center">
+            <div class="hero-text-container">
+              <h1 class="hero-title">
+                Hi, I'm <span style="color: rgb(188, 188, 188)"> Ameen</span> a professional UI/UX
+                Designer and Web Developer
+              </h1>
+              <p class="hero-para">
+                Are you looking for a professional and visually appealing website for your
+                restaurant, cafe, or event? Look no further! I can create stunning, optimized and
+                super fast websites for your business needs.
+              </p>
+
+              <div class="social-links-container">
+                <ul class="social-links-lists">
+                  <li class="social-link-list">
+                    <a class="social-link" href="https://github.com/AmeenNH3" target="_blank">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </li>
+                  <li class="social-link-list">
+                    <a
+                      class="social-link"
+                      href="https://www.linkedin.com/in/ameen-nh3/"
+                      target="_blank"
+                    >
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                  </li>
+                  <li class="social-link-list">
+                    <a class="social-link" href="https://www.behance.net/AmeenNH3" target="_blank">
+                      <ion-icon name="logo-behance"></ion-icon>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hero-image-container">
+              <div class="hero-box">
+                <div class="hero-inside-box">
+                  <div class="hero-inside-inside-box">
+                    <div class="hero-inside-inside-inside-box"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <!-- <section class="work-section-container container">
+        <h2>Work</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officiis tenetur
+          reiciendis, est ducimus atque culpa iste asperiores sint quo in. Accusantium saepe ab
+          deleniti, reiciendis et earum perferendis soluta? Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Consectetur quidem amet unde rem, eaque in. Deserunt magnam quas, totam
+          molestias laboriosam aspernatur exercitationem fuga reiciendis ab voluptates blanditiis
+          inventore porro quisquam rerum ipsum quasi asperiores quia atque numquam id non libero
+          molestiae nulla! Vel ex adipisci, excepturi facilis dolores nemo architecto eaque.
+          Nostrum, quas enim sapiente quod incidunt, dolorem suscipit qui quae inventore officiis
+          ullam quo eum excepturi natus molestiae facilis asperiores amet perferendis similique
+          consequatur exercitationem impedit voluptatem. Nemo repellat vero distinctio eaque, omnis
+          quo vitae excepturi nesciunt porro eligendi asperiores quibusdam. Tempora dolor sequi
+          blanditiis inventore eos vero?
+        </p>
       </section>
-    </main>
+      <section class="about-section-container container">
+        <h2>About</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officiis tenetur
+          reiciendis, est ducimus atque culpa iste asperiores sint quo in. Accusantium saepe ab
+          deleniti, reiciendis et earum perferendis soluta? Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Consectetur quidem amet unde rem, eaque in. Deserunt magnam quas, totam
+          molestias laboriosam aspernatur exercitationem fuga reiciendis ab voluptates blanditiis
+          inventore porro quisquam rerum ipsum quasi asperiores quia atque numquam id non libero
+          molestiae nulla! Vel ex adipisci, excepturi facilis dolores nemo architecto eaque.
+          Nostrum, quas enim sapiente quod incidunt, dolorem suscipit qui quae inventore officiis
+          ullam quo eum excepturi natus molestiae facilis asperiores amet perferendis similique
+          consequatur exercitationem impedit voluptatem. Nemo repellat vero distinctio eaque, omnis
+          quo vitae excepturi nesciunt porro eligendi asperiores quibusdam. Tempora dolor sequi
+          blanditiis inventore eos vero?
+        </p>
+      </section> -->
+      </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script type="module" src="./src.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+      <script type="module" src="./src.js"></script>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
   </body>
 </html>

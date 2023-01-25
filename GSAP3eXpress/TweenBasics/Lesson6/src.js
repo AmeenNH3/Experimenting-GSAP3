@@ -1,3 +1,5 @@
+const bodyEl = document.querySelector(".body");
+
 const heroTitle = document.querySelector(".hero-title");
 const heroPara = document.querySelector(".hero-para");
 const heroBox = document.querySelector(".hero-box");
@@ -7,6 +9,7 @@ const heroBoxInside3 = document.querySelector(".hero-inside-inside-inside-box");
 
 const navbar = document.querySelector(".navbar");
 const logoBox = document.querySelector(".logo span");
+const socialLinks = document.querySelector(".social-link-list");
 
 gsap.set(heroBoxInside, { opacity: 0 });
 gsap.set(heroBoxInside2, { opacity: 0 });
@@ -27,45 +30,82 @@ let animation = gsap
   )
   .fromTo(heroBoxInside3, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 1 }, "<0.5")
   .fromTo(navbar, { opacity: 0, yPercent: -100 }, { opacity: 1, yPercent: 0 }, "<1")
-  .to(logoBox, { x: 10, y: 10, opacity: 1, rotation: 16, ease: "bounce", duration: 1 });
+  .to(logoBox, { x: 10, y: 10, opacity: 1, rotation: 16, ease: "bounce", duration: 1 }, "<0.5")
+  .fromTo(
+    ".social-link",
+    { opacity: 0, y: -20 },
+    { opacity: 1, y: 0, amount: 2, stagger: 0.3 },
+    "-=2"
+  );
+
+const navBarListLinks = document.querySelectorAll(".navbar-list");
+
+navBarListLinks.forEach((element) => {
+  const tween = gsap.fromTo(
+    element.querySelector(".line"),
+    { width: 0 },
+    { width: 12, duration: 0.5, paused: true }
+  );
+
+  element.addEventListener("mouseenter", () => tween.restart());
+  element.addEventListener("mouseleave", () => tween.reverse());
+});
+
+// socialLinks.forEach((element) => {
+//   const tl = gsap
+//     .timeline({ paused: true })
+//     .fromTo(element.querySelector("ion-ion"), { opacity: 0, y: -20 }, { y: 0, duration: 0.5 });
+
+//   element.addEventListener("mouseenter", () => tl.restart());
+//   element.addEventListener("mouseleave", () => tl.reverse());
+// });
 
 const burgerNav = document.querySelector(".burger-nav");
 const navBox = document.querySelector(".nav-box");
 const navBox1 = document.querySelector(".nav-inside-box");
 const navBox2 = document.querySelector(".nav-inside-inside-box");
 
-const navBarLists = document.querySelector(".navbar-lists");
-const navBarListsCloseButton = document.querySelector(".nav-close-button");
-const navBarListsButton = document.querySelector(".nav-button");
-let navOn = false;
+const mobilenavBarLists = document.querySelector(".mobile-navbar-lists");
+const mobilenavBarListsCloseButton = document.querySelector(".mobile-nav-close-button");
+const mobilenavBarListsButton = document.querySelector(".nav-button");
+// const navBar = document.querySelector(".navbar");
+
+let mobileNavOn = false;
 const tlNav = gsap
   .timeline({ paused: true })
-  .fromTo(navBarLists, { xPercent: 100, duration: 1.5 }, { xPercent: 0, duration: 1.5 });
+  .fromTo(
+    mobilenavBarLists,
+    { xPercent: 100, visibility: "hidden" },
+    { xPercent: 0, visibility: "visible", duration: 0.75 }
+  );
 
-navBarListsButton.addEventListener("click", () => {
-  navBarLists.classList.add("show");
+mobilenavBarListsButton.addEventListener("click", () => {
   tlNav.restart();
-  navOn = !navOn;
+  mobileNavOn = !mobileNavOn;
+  if (mobileNavOn) bodyEl.classList.add("no-overflow");
+  else bodyEl.classList.remove("no-overflow");
 });
 
-navBarListsCloseButton.addEventListener("click", () => {
+mobilenavBarListsCloseButton.addEventListener("click", () => {
   tlNav.reverse();
-  Sleep(1500);
-  navBarLists.classList.remove("show");
-  navOn = !navOn;
+  mobileNavOn = !mobileNavOn;
+  if (mobileNavOn) bodyEl.classList.add("no-overflow");
+  else bodyEl.classList.remove("no-overflow");
 });
 
-if (navOn == false) {
-  gsap.set(navBarLists, { clearProps: "all" });
-}
+const mobilenavbarLinkList = document.querySelectorAll(".mobile-navbar-list");
 
-const navbarLinkList = document.querySelectorAll(".navbar-list");
+mobilenavbarLinkList.forEach((element, index) => {
+  const tl = gsap
+    .timeline({ paused: true })
+    .to(element.querySelector(".mobile-navbar-link"), { x: 10, color: "white", duration: 0.5 })
+    .to(element.querySelector(".box"), { width: 8, height: 8, borderRadius: 100 }, 0);
 
-// navbarLinkList.forEach((element, index) => {
-//   const tl = gsap
-//     .timeline({ paused: true })
-//     .to(element.querySelector(".navbar-link"), { scale: 1.2 });
+  element.addEventListener("mouseenter", () => tl.restart());
+  element.addEventListener("mouseleave", () => tl.reverse());
+});
 
-//   element.addEventListener("mouseenter", () => tl.play());
-//   element.addEventListener("mouseleave", () => tl.reverse());
-// });
+addEventListener("resize", (event) => {});
+onresize = (event) => {
+  mobilenavBarLists.style.visibility = "hidden";
+};
