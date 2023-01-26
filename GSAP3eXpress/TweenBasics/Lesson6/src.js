@@ -1,4 +1,5 @@
 const bodyEl = document.querySelector(".body");
+const wrapperEl = document.querySelector(".wrapper");
 
 const heroTitle = document.querySelector(".hero-title");
 const heroPara = document.querySelector(".hero-para");
@@ -82,15 +83,25 @@ const tlNav = gsap
 mobilenavBarListsButton.addEventListener("click", () => {
   tlNav.restart();
   mobileNavOn = !mobileNavOn;
-  if (mobileNavOn) bodyEl.classList.add("no-overflow");
-  else bodyEl.classList.remove("no-overflow");
+  if (mobileNavOn) {
+    bodyEl.classList.add("no-overflow");
+    wrapperEl.classList.add("no-overflow");
+  } else {
+    bodyEl.classList.remove("no-overflow");
+    wrapperEl.classList.remove("no-overflow");
+  }
 });
 
 mobilenavBarListsCloseButton.addEventListener("click", () => {
   tlNav.reverse();
   mobileNavOn = !mobileNavOn;
-  if (mobileNavOn) bodyEl.classList.add("no-overflow");
-  else bodyEl.classList.remove("no-overflow");
+  if (mobileNavOn) {
+    bodyEl.classList.add("no-overflow");
+    wrapperEl.classList.add("no-overflow");
+  } else {
+    bodyEl.classList.remove("no-overflow");
+    wrapperEl.classList.remove("no-overflow");
+  }
 });
 
 const mobilenavbarLinkList = document.querySelectorAll(".mobile-navbar-list");
